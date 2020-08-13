@@ -1,0 +1,179 @@
+/*
+* Developer: Branko Dimitrijoski
+*
+*
+* CONTENTS:
+-------------------------
+* GENERAL
+* HELPERS
+* WRAPPERS
+* CARDS
+* DAYS TOOLBAR
+**/
+
+/*-------- GENERAL --------*/
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    background: #2f2f2f !important;
+}
+
+body {
+    font-weight: 300;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 300;
+}
+
+.weather-bg {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 1;
+    display: block;
+
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 480px) {
+    .weather-bg {
+        background-image: url('/images/munich-bg_sm.jpg');
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    .weather-bg {
+        background-image: url('/images/munich-bg_md.jpg');
+    }
+}
+
+@media (min-width: 1025px) {
+    .weather-bg {
+        background-image: url('/images/munich-bg_lg.jpg');
+    }
+}
+/*-------- END GENERAL --------*/
+
+/*-------- HELPERS --------*/
+.pull-left {
+    float: left;
+}
+.pull-right {
+    float: right;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.visible-mobile {
+    display: none;
+}
+/*-------- END HELPERS --------*/
+
+/*-------- WRAPPERS --------*/
+.content-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    z-index: 9999;
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
+
+    min-height: 100%;
+    height: auto;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.heading {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/*-------- END WRAPPERS --------*/
+
+/*-------- CARDS --------*/
+.weather-card {
+    cursor: pointer;
+    text-align: center;
+}
+
+.weather-card:hover {
+    border: 1px solid rgba(255, 255, 255, 0.7) !important;
+}
+
+.weather-card.active {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.7) !important;
+}
+
+.weather-card p {
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+
+@media (max-width: 1025px) {
+    .visible-mobile {
+        display: block;
+    }
+    .weather-card .txt-wrapper {
+        display: block;
+        margin-right: 10px;
+        text-align: left;
+        text-transform: capitalize;
+    }
+
+    .hourly-forecast-card .img-wrapper,
+    .hourly-forecast-card .weather-info-wrapper {
+        display: block;
+        float: left;
+    }
+
+    .hourly-forecast-card {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.7) !important;
+        display: block;
+        overflow: hidden;
+    }
+}
+/*-------- CARDS --------*/
+
+/*-------- DAYS TOOLBAR --------*/
+.days-toolbar > button {
+    margin-top: -50px;
+    color: rgba(255, 255, 255, 0.7);
+}
+/*-------- DAYS TOOLBAR --------*/

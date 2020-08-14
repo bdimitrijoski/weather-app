@@ -60,19 +60,19 @@ h4 {
 
 @media (max-width: 480px) {
     .weather-bg {
-        background-image: url('/images/munich-bg_sm.jpg');
+        background-image: url('assets/images/munich-bg_sm.jpg');
     }
 }
 
 @media (min-width: 481px) and (max-width: 1024px) {
     .weather-bg {
-        background-image: url('/images/munich-bg_md.jpg');
+        background-image: url('assets/images/munich-bg_md.jpg');
     }
 }
 
 @media (min-width: 1025px) {
     .weather-bg {
-        background-image: url('/images/munich-bg_lg.jpg');
+        background-image: url('assets/images/munich-bg_lg.jpg');
     }
 }
 /*-------- END GENERAL --------*/
